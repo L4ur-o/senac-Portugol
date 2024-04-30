@@ -9,8 +9,8 @@
 programa
 {
 /*	const inteiro hospedesMAX = 20  */
-
-	cadeia nome
+// Variaveis globais
+	cadeia nome // Array
 	real resultado = 230.0
 	inteiro estadia
 /*
@@ -44,6 +44,7 @@ programa
                     cancelarReserva()
                     pare */
                 caso 4:
+                saida()
                 	pare
                 caso contrario:
                     escreva("Opção inválida. Tente novamente.\n")
@@ -64,6 +65,11 @@ programa
     		escreva("Ótimo, sr(a) ", nome, ". Você pagará o total de: R$", resultado * estadia,  " Reais\n")
     		escreva("Aceitamos todos os cartões e dividimos em até 6x sem juros \n")
     }
+
+	funcao saida()
+	{
+		escreva("Agradecemos sua visita. Volte mais vezes...")
+	}
 }
 
 /* $$$ Portugol Studio $$$ 
@@ -71,7 +77,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1984; 
+ * @POSICAO-CURSOR = 2063; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
