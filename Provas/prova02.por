@@ -53,39 +53,39 @@ funcao inicio()
 * 
  */
       funcao inscreverHospede()
+{
+    inteiro indice = 1
+
+    enquanto (indice <= qtdMAXIMA)
     {
-        inteiro indice = 0
+        limpa()
+        escreva("### Inscrição de hóspede ", indice, " ###\n")
+        escreva("Nome do hóspede: ")
+        leia(nomes[indice]) 
+        escreva("Seu número de hóspede será: ", indice, "\n") 
+        numeros[indice] = indice 
+        escreva("Quantos dias irás ficar: ")
+        leia(diasEstadia[indice])
 
-        enquanto (indice < qtdMAXIMA)
+        indice = indice + 1
+
+        escreva("\nHóspede inscrito com sucesso!\n")
+
+        inteiro continuar
+        escreva("Deseja inscrever outro hóspede? (1 - Sim / 0 - Não): ")
+        leia(continuar)
+
+        se (continuar == 0)
         {
-            limpa()
-            escreva("### Inscrição de hóspede ", indice++, " ###\n")
-            escreva("Nome do hóspede: ")
-            leia(nomes[indice])
-            escreva("Número do hóspede: ")
-            leia(numeros[indice])
-            escreva("Quantos dias irás ficar: ")
-            leia(diasEstadia[indice])
-
-            indice = indice++
-
-            escreva("\nHóspede inscrito com sucesso!\n")
-
-            inteiro continuar
-            escreva("Deseja inscrever outro hóspede? (1 - Sim / 0 - Não): ")
-            leia(continuar)
-
-            se (continuar == 0)
-            {
-                pare
-            }
-        }
-
-        se (indice == qtdMAXIMA)
-        {
-            escreva("\nLimite de hóspedes atingido.\n")
+            pare
         }
     }
+
+    se (indice > qtdMAXIMA)
+    {
+        escreva("\nLimite de hóspedes atingido.\n")
+    }
+}
 
 /*
 * 2 -> Esta função visa ver os detalhes de cada um dos hóspedes. Nesse caso, o valor da estadia (230.0) vezes a quantidade de dias que o memso irá ficar.
@@ -166,7 +166,7 @@ funcao inicio()
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3715; 
+ * @POSICAO-CURSOR = 2289; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

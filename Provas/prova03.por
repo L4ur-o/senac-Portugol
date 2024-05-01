@@ -51,42 +51,40 @@ programa
     
 // Sistema de Banco de dados adicionado na Atividade anterior, podendo ser modificado o limite de hospedes como desejar.
     funcao inscreverHospede()
+{
+    inteiro indice = 1 // Inicializa o índice com 1
+
+    enquanto (indice <= qtdMAXIMA)
     {
-        inteiro indice = 0
+        limpa()
+        escreva("### Inscrição de hóspede ", indice, " ###\n")
+        escreva("Nome do hóspede: ")
+        leia(nomes[indice]) // Usa o índice diretamente
+        escreva("Número do hóspede: ", indice, "\n") // Exibe o número do hóspede
+        numeros[indice] = indice // Atribui o número do hóspede ao array
+        escreva("Quantos dias irás ficar: ")
+        leia(diasEstadia[indice])
 
-        enquanto (indice < qtdMAXIMA)
+        indice = indice + 1 // Incrementa o índice corretamente
+
+        escreva("\nHóspede inscrito com sucesso!\n")
+
+        inteiro continuar
+        escreva("Deseja inscrever outro hóspede? (1 - Sim / 0 - Não): ")
+        leia(continuar)
+
+        se (continuar == 0)
         {
-            limpa()
-            escreva("### Inscrição de hóspede ", indice++, " ###\n")
-            escreva("Nome do hóspede: ")
-            leia(nomes[indice])
-            escreva("Número do hóspede: ")
-            leia(numeros[indice])
-            escreva("Quantos dias irás ficar: ")
-            leia(diasEstadia[indice])
-
-
-            valorTotalEstadia[indice] = diasEstadia[indice] * VALOR_DIARIA
-
-            indice = indice++
-
-            escreva("\nHóspede inscrito com sucesso!\n")
-
-            inteiro continuar
-            escreva("Deseja inscrever outro hóspede? (1 - Sim / 0 - Não): ")
-            leia(continuar)
-
-            se (continuar == 0)
-            {
-                pare
-            }
-        }
-
-        se (indice == qtdMAXIMA)
-        {
-            escreva("\nLimite de hóspedes atingido.\n")
+            pare
         }
     }
+
+    se (indice > qtdMAXIMA)
+    {
+        escreva("\nLimite de hóspedes atingido.\n")
+    }
+}
+
 
     funcao verDetalhesHospede()
     {
@@ -163,7 +161,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 751; 
+ * @POSICAO-CURSOR = 2644; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
