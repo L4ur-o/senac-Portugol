@@ -42,9 +42,15 @@ programa
                     cancelarReserva()
                     pare
                 caso 4:
-                	pare
+                    pare
                 caso contrario:
                     escreva("Opção inválida. Tente novamente.\n")
+            }
+
+            se (opcao == 4)
+            {
+            	tchau()
+            	pare
             }
         }
     }
@@ -59,13 +65,13 @@ programa
         limpa()
         escreva("### Inscrição de hóspede ", indice, " ###\n")
         escreva("Nome do hóspede: ")
-        leia(nomes[indice]) // Usa o índice diretamente
-        escreva("Número do hóspede: ", indice, "\n") // Exibe o número do hóspede
-        numeros[indice] = indice // Atribui o número do hóspede ao array
+        leia(nomes[indice])
+        escreva("Número do hóspede: ", indice, "\n") 
+        numeros[indice] = indice
         escreva("Quantos dias irás ficar: ")
         leia(diasEstadia[indice])
 
-        indice = indice + 1 // Incrementa o índice corretamente
+        indice = indice + 1
 
         escreva("\nHóspede inscrito com sucesso!\n")
 
@@ -104,7 +110,7 @@ programa
                 escreva("\n### Detalhes do hóspede ", numeros[j], " ###\n")
                 escreva("Nome: ", nomes[j], "\n")
                 escreva("Dias de estadia: ", diasEstadia[j], "\n")
-                escreva("Valor total a pagar: R$ ", valorTotalEstadia[j], "\n") // Exibir o valor total da estadia
+                escreva("Valor total a pagar: R$ ", valorTotalEstadia[j], "\n")
                 pare
             }
         }
@@ -154,6 +160,11 @@ programa
             escreva("\nHóspede não encontrado.\n")
         }
     }
+
+    funcao tchau()
+    {
+    	escreva("\nObrigado por nos visitar. Até breve!\n")
+    }
 }
 
 /* $$$ Portugol Studio $$$ 
@@ -161,7 +172,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2644; 
+ * @POSICAO-CURSOR = 1446; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
