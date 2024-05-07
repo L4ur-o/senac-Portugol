@@ -10,9 +10,9 @@ programa
     leia(qtd_hospedes)
 
     // Necessário atribuir valores para evitar a incompatibilidade desses valores ao decorrer do código (evitar que o valor a ser passado seja um NaN = Not a Number)
-    total_diarias = 0
-    menor_diaria = 0
-    maior_diaria = 0
+    total_diarias = 0.0
+    menor_diaria = 0.0
+    maior_diaria = 0.0
 
     loopinho()
   }
@@ -28,14 +28,16 @@ programa
       escreva("Número do quarto: ")
       leia(num_quarto)
 
-      escreva("Valor da diária: R$ ")
+      escreva("Valor da diária: R$ \n")
       leia(valor_diaria)
 
             
       escreva("Quarto ", num_quarto, ": R$ ", valor_diaria, "\n\n")
             
       total_diarias = total_diarias + valor_diaria
-            
+
+      // Estruturas de condição
+      
       se (i == 1 ou valor_diaria < menor_diaria) 
       {
         menor_diaria = valor_diaria
