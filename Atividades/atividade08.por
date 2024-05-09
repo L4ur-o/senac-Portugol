@@ -42,6 +42,8 @@ programa
 		}
 		
 		loopinho()
+
+		exibirQuartos()
 	}
 	
 	funcao loopinho()
@@ -97,6 +99,22 @@ programa
 			se (continuar != "S" e continuar != "s") 
 			{
 				sair = verdadeiro
+			}
+		}
+	}
+
+	funcao exibirQuartos()
+	{
+		escreva("Estado dos quartos:\n")
+		para(inteiro i = 0; i < 10; i++) 
+		{
+			se (quartos[i] == 0) 
+			{
+				escreva("Quarto ", i + 1, ": Livre\n")
+			} 
+			senao 
+			{
+				escreva("Quarto ", i + 1, ": Ocupado\n")
 			}
 		}
 	}
