@@ -38,7 +38,7 @@ programa
 
 	funcao exibirMenu() 
 	{
-		escreva("----- Menu -----\n")
+		escreva("\n----- Menu -----\n")
 		escreva("1- Cadastrar\n")
 		escreva("2- Pesquisar\n")
 		escreva("3- Exclusão de hóspede\n")
@@ -96,25 +96,45 @@ programa
 
 	funcao excluirHospede(/**void**/)
 	{
-		escreva("Informe o nome do hóspede que desejas excluir: ")
-		leia(nome)
-
-		logico achado = falso
-
-		para (inteiro i = 0; i < 7; i++) // Percorre
+		logico continuar = verdadeiro
+		enquanto (continuar)
 		{
-			se(hospedes[i] == nome) // fulano existe?
+			escreva("Informe o nome do hóspede que desejas excluir: ")
+			leia(nome)
+
+			logico achado = falso
+
+			para (inteiro i = 0; i < 7; i++) // Percorre
 			{
-				hospedes[i] = "" // "fulano" -> ""
-				escreva("O hóspede ", nome, " foi excluido com sucesso.\n\n")
-				achado = verdadeiro
-				pare
+				se(hospedes[i] == nome) // fulano existe?
+				{
+					hospedes[i] = "" // "fulano" -> ""
+					escreva("O hóspede ", nome, " foi excluido com sucesso.\n\n")
+					achado = verdadeiro
+					pare
+				}
 			}
-		}
 
-		se(nao achado)
-		{
+			se(nao achado)
+			{
 			escreva("O hóspede ", nome, " não foi encontrado.\n\n")
+			}
+
+			escreva("Deseja excluir outro hóspede? (S/N): ")
+			cadeia resposta
+			leia(resposta)
+
+			//Verificar se o valor  é correto
+			enquanto(resposta != "S" e resposta !="s" e resposta !="N" e resposta !="n")
+			{
+				escreva("Opção inválida, digite novamente (S/N): ")
+				leia(resposta)
+			}
+
+			se (resposta == "N" ou resposta == "n")
+			{
+				exibirMenu()
+			}
 		}
 	}
 	
@@ -125,7 +145,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1605; 
+ * @POSICAO-CURSOR = 2726; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
