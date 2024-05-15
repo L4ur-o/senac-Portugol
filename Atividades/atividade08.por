@@ -1,6 +1,7 @@
 /* 
-Utilizar um vetor de 10 posições;
+Utilizar um vetor de 10 posições; 0 até 9 
 Cada posição conrresponderá a um quarto de um hotel;
+Início:
 O sistema deve perguntar ao usuário qual número de quarto ele deseja visitar. (sendo de 1 ao 10. 
 Então altere o valor informado pelo usuário para manipular o vetor corretamente);
 Após isso, o sistema deve perguntar ao usuário se o quarto escolhido está, Livre "L" ou Ocupado "O";
@@ -15,16 +16,14 @@ mensagem: “O quarto ", (numero do quarto), " já está livre.” e voltar para
 2º Se o quarto está livre ("L") e o usuário digita "O", deve ser exibida a
 mensagem “O quarto ", (numero do quarto), " foi ocupado com sucesso.”, e o valor do vetor deve ser alterado de "L" para "O";
 
-3º Se o quarto estiver ocupado e o usuário digitar L deve ser exibida a
+3º Se o quarto estiver ocupado ("O") e o usuário digitar L deve ser exibida a
 mensagem “O quarto ", (numero do quarto), " foi liberado com sucesso.” e o valor do vetor deve ser alterado de "O" para "L";
 
 4º Se o quarto estiver ocupado ("O") e o usuário digitar "O" deve ser exibida a
-mensagem “O quarto ", (numero do quarto), " já está ocupado.”, e o valor do vetor deve ser alterado de "O" para "L"
-
-
-
+mensagem “O quarto ", (numero do quarto), " já está ocupado.”, e voltar para a escolha de outro quarto;
 
 */
+
 programa 
 {
 	inteiro quartos[10]
@@ -38,7 +37,7 @@ programa
 
 		para(inteiro i = 0; i < 10; i++) 
 		{
-			quartos[i] = 0 
+			quartos[i] = 0
 		}
 		
 		loopinho()
@@ -48,7 +47,7 @@ programa
 	
 	funcao loopinho()
 	{
-		enquanto (nao sair)
+		enquanto (nao sair)   
 		{
 			escreva("Informe o número do quarto (de 1 a 10): ")
 			leia(numero_quarto)
@@ -66,25 +65,25 @@ programa
 			
 			se (estado == "L" ou estado == "l") 
 			{
-				se (quartos[indice] == 0) 
+				se (quartos[indice] == 0) // L
 				{
 					escreva("O quarto ", numero_quarto, " já está livre.\n")
 				} 
-				senao 
+				senao // O
 				{
-					quartos[indice] = 0
+					quartos[indice] = 0 // O -> L
 					escreva("O quarto ", numero_quarto, " foi liberado com sucesso.\n")
 				}
 			} 
 			senao se (estado == "O" ou estado == "o") 
 			{
-				se (quartos[indice] == 1) 
+				se (quartos[indice] == 1) // O
 				{
 					escreva("O quarto ", numero_quarto, " já está ocupado.\n")
 				} 
-				senao 
+				senao // L
 				{
-					quartos[indice] = 1
+					quartos[indice] = 1 // L -> O
 					escreva("O quarto ", numero_quarto, " foi ocupado com sucesso.\n")
 				}
 			} 
@@ -108,11 +107,11 @@ programa
 		escreva("Estado dos quartos:\n")
 		para(inteiro i = 0; i < 10; i++) 
 		{
-			se (quartos[i] == 0) 
+			se (quartos[i] == 0) // L
 			{
 				escreva("Quarto ", i + 1, ": Livre\n")
 			} 
-			senao 
+			senao // O
 			{
 				escreva("Quarto ", i + 1, ": Ocupado\n")
 			}
@@ -125,7 +124,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2882; 
+ * @POSICAO-CURSOR = 3201; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

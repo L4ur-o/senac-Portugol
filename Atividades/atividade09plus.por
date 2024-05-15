@@ -24,8 +24,11 @@ programa
 					pare
 					
 				caso 3:
+					excluirHospede()
+
+				caso 4: 
 					sair = verdadeiro 
-					pare              // redundância
+					pare            // redundância
 				caso contrario:
 					escreva("Opção inválida. Por favor, escolha novamente.\n\n")
 					pare // break
@@ -38,9 +41,9 @@ programa
 		escreva("----- Menu -----\n")
 		escreva("1- Cadastrar\n")
 		escreva("2- Pesquisar\n")
-		escreva("3- Sair\n")
+		escreva("3- Exclusão de hóspede\n")
+		escreva("4 - Sair\n")
 		escreva("Escolha uma opção: ")
-		
 	}
 
 	funcao cadastrarHospede() // 1
@@ -90,6 +93,31 @@ programa
 			escreva("Hóspede ", nome, " não encontrado.\n\n")
 		}
 	}
+
+	funcao excluirHospede(/**void**/)
+	{
+		escreva("Informe o nome do hóspede que desejas excluir: ")
+		leia(nome)
+
+		logico achado = falso
+
+		para (inteiro i = 0; i < 7; i++) // Percorre
+		{
+			se(hospedes[i] == nome) // fulano existe?
+			{
+				hospedes[i] = "" // "fulano" -> ""
+				escreva("O hóspede ", nome, " foi excluido com sucesso.\n\n")
+				achado = verdadeiro
+				pare
+			}
+		}
+
+		se(nao achado)
+		{
+			escreva("O hóspede ", nome, " não foi encontrado.\n\n")
+		}
+	}
+	
 }
 
 /* $$$ Portugol Studio $$$ 
@@ -97,7 +125,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1187; 
+ * @POSICAO-CURSOR = 1605; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
